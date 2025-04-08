@@ -1,0 +1,44 @@
+{% extends 'partials/base.html' %}
+{% block title%}IzzyTech Graphics{% endblock title %}
+
+{% block content %}
+    <h2 class="text-center my-4 pt-5">Leave a Message</h2>
+        <section id="message" class="p5">
+            <div class="container-fluid" id="message">
+                        <div class="card my-3 shadow">
+                            <div class="card-body">
+                            <form method="POST">
+                                {% csrf_token %}
+                                <div class="mb-3">
+                                    <label for="first-name" class="col-form-label">
+                                        Name:
+                                    </label>
+                                    {{form.name}}
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="col-form-label">
+                                        Email:
+                                    </label>
+                                    {{form.email}}
+                                </div>
+                                <div class="mb-3">
+                                    <label for="phone" class="col-form-label">
+                                        Phone:
+                                    </label>
+                                    {{form.phone}}
+                                </div>
+                                <div class="mb-3">
+                                <label for="message" class="col-form-label">
+                                    Message:
+                                </label>
+                                {{form.message}}
+                            </div>
+                            <div class="d-grid gap-2">  
+                                <button type="submit" class="btn btn-primary">Send</button>
+                            </div> 
+                            </form> 
+                            </div>
+                </div>            
+            </div>
+        </section>
+{% endblock content %}

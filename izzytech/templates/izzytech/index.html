@@ -1,0 +1,190 @@
+{% extends 'partials/base.html' %}
+{% block title%}Izzy Tech{% endblock title %}
+
+{% block content %}
+<section class="bg-dark text-light pt-lg-5 text-center text-sm-start" id="bgc">
+  <div class="container container-fluid">
+      <div class="d-sm-flex align-items-center justify-content-between">
+          <div class="pt-5 pt-lg-0">
+            <br>
+              <h1>Welcome to <span class="text-warning">Izzy Technologies</span></h1>
+              <p class="lead my-4">
+                  <b>My name is Michael Israel and I am the fastest typist on Earth. The quick brown fox jumped over the lazy dog. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium a autem incidunt voluptatibus nemo explicabo!</b>
+              </p>
+              <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#enroll">
+                  Get Started
+              </button>
+          </div>
+          <img class="img-fluid w-50 pt-3" src="static\img\showcase.svg" alt="Image">
+      </div>
+  </div>
+</section>
+
+<section class="p-5">
+  <div class="container-fluid">
+    <h2 class="text-center text-dark">Our Services</h2>
+            <p class="lead text-center text-dark mb-5">
+                At Izzy Technologies, we offer you quality and affordable services.
+            </p>
+      <div class="row text-center g-4">
+          <div class="col-md ">
+              <div class="card bg-dark text-light">
+                  <div class="card-body text-center">
+                      <div class="h1 mb-3">
+                          <i class="bi bi-laptop"></i>
+                      </div>
+                      <h3 class="card-title mb-3">
+                          Web Design
+                      </h3>
+                      <p class="card-text">
+                          We design and develop your websites for you just the way you like it and it's also incredibly affordable
+                      </p>
+                      <a href="{% url 'web' %}" class="btn btn-primary">See Samples</a>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md">
+              <div class="card bg-secondary text-light">
+                  <div class="card-body text-center">
+                      <div class="h1 mb-3">
+                          <i class="bi bi-person-square"></i>
+                      </div>
+                      <h3 class="card-title mb-3">
+                          Graphics Design
+                      </h3>
+                      <p class="card-text">
+                          We make your imaginations come alive through graphics. We can help design your graphics just the way you like it.
+                      </p>
+                      <a href="{% url 'graphics_page' %}" class="btn btn-dark">See Samples</a>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md">
+              <div class="card bg-dark text-white">
+                  <div class="card-body text-center">
+                      <div class="h1 mb-3">
+                          <i class="bi bi-people"></i>
+                      </div>
+                      <h3 class="card-title mb-3">
+                          Software Development
+                      </h3>
+                      <p class="card-text">
+                        Design and development of softwares ranging from computer
+                      </p>
+                      <a href="{% url 'software' %}" class="btn btn-primary">See Samples</a>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md">
+            <div class="card bg-primary text-white">
+                <div class="card-body text-center">
+                    <div class="h1 mb-3">
+                        <i class="bi bi-people"></i>
+                    </div>
+                    <h3 class="card-title mb-3">
+                        Mobile App Development
+                    </h3>
+                    <p class="card-text">
+                      Design and development of softwares ranging from
+                    </p>
+                    <a href="{% url 'mobile' %}" class="btn btn-light">See Samples</a>
+                </div>
+            </div>
+        </div>
+      </div>
+  </div>
+</section>
+
+<section class="p-5 bg-dark text-light">
+  <div class="container-fluid bg-dark lead">
+      <div class="row g-4">
+          <div class="col-md">
+              <h2 class="text-center mb-4">Contact Info</h2>
+              <br>
+              <ul>
+                  <li class="list-group-item">
+                      <span class="fw-bold">Main Location:      </span> Federal Port Housing Road, Nigeria.
+                  </li>
+                  <hr>
+                  <li class="list-group-item">
+                      <span class="fw-bold">Phone:      </span> +2347033947599
+                  </li>
+                  <hr>
+                  <li class="list-group-item">
+                      <span class="fw-bold">Alternate Phone:      </span> +23480684974849
+                  </li>
+                  <hr>
+                  <li class="list-group-item">
+                      <span class="fw-bold">Email:      </span> michaelizzy2@gmail.com
+                  </li>
+                  <hr>
+              </ul>
+              <br>
+              <h2 class="text-center mb-4">Social Handles</h2>
+              <div class="text-center">
+                    <a href=""><i class="bi bi-twitter text-light mx-1"></i></a>
+                    <a href=""><i class="bi bi-facebook text-light mx-1"></i></a>
+                    <a href=""><i class="bi bi-linkedin text-light mx-1"></i></a>
+                    <a href=""><i class="bi bi-whatsapp text-light mx-1"></i></a>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section id="message" class="p5">
+  <div class="container-fluid" id="message">
+      <h2 class="text-center my-4">Leave us a Message</h2>
+            <div class="card my-3 shadow">
+                <div class="card-body">
+                  <form method="POST">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="first-name" class="col-form-label">
+                            Name:
+                        </label>
+                        {{form.name}}
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="col-form-label">
+                            Email:
+                        </label>
+                        {{form.email}}
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="col-form-label">
+                            Phone:
+                        </label>
+                        {{form.phone}}
+                    </div>
+                    <div class="mb-3">
+                      <label for="message" class="col-form-label">
+                          Message:
+                      </label>
+                      {{form.message}}
+                  </div>
+                  <div class="d-grid gap-2">  
+                    <button type="submit" class="btn btn-primary">Send</button>
+                  </div>
+                  </form>  
+                </div>
+      </div>            
+  </div>
+</section>
+
+<footer class="p-5 bg-dark text-white text-center position-relative">
+  <div class="container-fluid">
+      <p class="lead">Copyright &copy; 2025 Izzy Technologies</p>
+      <a href="" class="position-absolute bottom-0 end-0 p-5">
+          <i class="bi bi-arrow-up-circle h1"></i>
+      </a>
+  </div>
+  <div class="text-center">
+    <a href=""><i class="bi bi-twitter text-light mx-1"></i></a>
+    <a href=""><i class="bi bi-facebook text-light mx-1"></i></a>
+    <a href=""><i class="bi bi-linkedin text-light mx-1"></i></a>
+    <a href=""><i class="bi bi-whatsapp text-light mx-1"></i></a>
+</div>
+</footer>
+
+{% endblock content %}

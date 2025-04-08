@@ -1,0 +1,28 @@
+{% extends 'partials/base.html' %}
+{% block title%}IzzyTech Graphics{% endblock title %}
+
+{% block content %}
+
+<section id="message" class="p5">
+    <div class="container-fluid" id="message">
+        <h2 class="text-center my-4 pt-5">Previous Work Samples</h2>
+            <div class="card my-3 shadow">
+                <div class="card-body">
+                    <div class="row text-center g-4"> 
+                        {% for softwares in software %}
+                        <div class="col-md-6 col-lg-3">
+                        <a href="{{softwares.image.url}}">    
+                            <div class="card" style="width: 18rem;">
+                                <img src="{{softwares.image.url}}" class="card-img-top" alt="image">
+                            </div>
+                        </a>
+                        </div>
+                        {% endfor %}
+                        <a href="{% url 'index' %}">Home</a>
+                    </div>
+                </div>
+            </div>            
+    </div>
+  </section>
+
+{% endblock content %}
