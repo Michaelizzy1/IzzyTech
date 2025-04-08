@@ -84,7 +84,7 @@ DATABASES = {
     }
 }
 
-DATABASES['default'] = dj_database_url.parse(config(DATABASE_URL))
+DATABASES['default'] = dj_database_url.parse(config("DATABASE_URL"))
 
 
 
