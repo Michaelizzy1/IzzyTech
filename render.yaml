@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: my-django-app
+    env: python
+    buildCommand: "./manage.py collectstatic --noinput"
+    startCommand: "gunicorn mysite.wsgi:application"
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: mysite.settings
+      - key: SECRET_KEY
+        value: django-insecure-0)#!%o)_k*xr@l-2d^o5$&!15@rvb$=*!3_vk9q!r!mi%l)7iw
