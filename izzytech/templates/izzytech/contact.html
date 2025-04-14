@@ -1,16 +1,16 @@
 {% extends 'partials/base.html' %}
-{% block title%}IzzyTech Graphics{% endblock title %}
+{% block title%}Adullam Tech{% endblock title %}
 
 {% block content %}
 
 <section id="message" class="p5">
     <div class="container container-fluid" id="message">
-        <h2 class="text-center my-4 pt-5">Contact Us</h2>
+        <h2 class="text-center my-4 pt-5">Contact Us</h2><br>
             <div class="card my-3 shadow">
-                <section class="p-5 bg-dark text-light">
-                    <div class="container-fluid bg-dark lead">
+                <section class="bg-dark text-light">
+                    <div class="bg-dark lead">
                         <div class="row g-4">
-                            <div class="col-md">
+                            <div class="col-md p-3">
                                 <br>
                                 <ul>
                                     <li class="list-group-item">
@@ -42,8 +42,12 @@
                         </div>
                     </div>
                   </section>
-            </div>            
+            </div> 
     </div>
+    <div class="container text-center">
+        <a href="{% url 'index' %}" class="text-center">Home</a>
+    </div>
+    <p></p>
   </section>
 
 {% endblock content %}
