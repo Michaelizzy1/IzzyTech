@@ -72,3 +72,20 @@ def message(request):
 
 def message_alert(request):
     return render(request, 'izzytech/message_alert.html')
+
+
+def courses(request):
+    return render(request, 'izzytech/courses.html')
+
+
+def enrol(request):
+    form = CourseModelForm()
+    if request.method == 'POST':
+        form = CourseModelForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('success')
+    context = {
+        'form':form,
+    }
+    return render(request, 'izzytech/enrol.html', context)

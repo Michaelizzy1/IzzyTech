@@ -23,3 +23,23 @@ class MessageModel(models.Model):
     email = models.EmailField()
     phone = models.CharField(max_length=15)
     message = models.TextField()
+
+class CourseModel(models.Model):
+    name = models.CharField(max_length=50)
+    email = models.EmailField()
+    phone = models.CharField(max_length=20)
+    CHOICES = [
+        ('option1', 'Web Design'),
+        ('option2', 'Graphics Design'),
+        ('option3', 'Software Development'),
+        ('option4', 'Mobile App Development'),
+    ]
+    NATURE = [
+        ('option1', 'onsite'),
+        ('option2', 'online'),
+    ]
+    desired_course = models.CharField(max_length=25, choices=CHOICES)
+    mode_of_study = models.CharField(max_length=25, choices=NATURE)
+
+    def __str__(self):
+        return self.name

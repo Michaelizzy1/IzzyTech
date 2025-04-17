@@ -1,8 +1,9 @@
 {% extends 'partials/base.html' %}
-{% block title%}{% endblock title %}
+{% block title%}IzzyTech Graphics{% endblock title %}
 
 {% block content %}
-    <h2 class="text-center my-4 pt-5">Leave a Message</h2>
+
+<h2 class="text-center my-4 pt-5">Enroll Now</h2>
         <section id="message" class="p5">
             <div class="container-fluid" id="message">
                         <div class="card my-3 shadow">
@@ -29,12 +30,19 @@
                                 </div>
                                 <div class="mb-3">
                                 <label for="message" class="col-form-label">
-                                    Message:
+                                    Desired Course:
                                 </label>
-                                {{form.message}}
-                            </div>
+                                {{form.desired_course}}
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="col-form-label">
+                                        Mode of Study:
+                                    </label>
+                                    {{form.mode_of_study}}
+                                </div><br>
+                                <hr>
                             <div class="d-grid gap-2">  
-                                <button type="submit" class="btn btn-primary">Send</button>
+                                <button type="submit" class="btn btn-primary">Submit</button>
                             </div> 
                             </form> 
                             </div>
@@ -45,4 +53,6 @@
             </div>
             <p></p>
         </section>
-{% endblock content %}
+
+
+{% endblock %}

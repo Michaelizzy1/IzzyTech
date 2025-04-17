@@ -1,0 +1,107 @@
+{% extends 'partials/base.html' %}
+{% block title%}Courses{% endblock title %}
+
+{% block content %}
+
+<section id="message" class="p5">
+<div class="container-fluid my-5">
+    <h2 class="text-center my-4 pt-3">List of Available Courses</h2>
+    <div class="card my-5 shadow">
+        <div class="card-body">
+                <div class="row text-center g-4">
+                    <div class="col-md col-lg-3">
+                        <div class="card bg-secondary text-light">
+                            <div class="card-body text-center">
+                                <div class="h1 mb-3">
+                                    <i class="bi bi-person-square"></i>
+                                </div>
+                                <h3 class="card-title mb-3">
+                                    Graphics Design
+                                </h3>
+                                <p class="card-text">
+                                    We make your imaginations come alive through graphics. We can help design your graphics just the way you like it.
+                                </p>
+                                <p>
+                                    <b>Price: N15,000</b> <br>
+                                    <b>Duration: 8 weeks</b> <br>
+                                    <b>Schedule: 2 hrs, 3 days a week</b> <br>
+                                </p>
+                                <a href="{% url 'graphics_page' %}" class="btn btn-dark">Start Enrollment</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md col-lg-3">
+                        <div class="card bg-dark text-white">
+                            <div class="card-body text-center">
+                                <div class="h1 mb-3">
+                                    <i class="bi bi-people"></i>
+                                </div>
+                                <h3 class="card-title mb-3">
+                                    Web Design
+                                </h3>
+                                <p class="card-text">
+                                Design and development of softwares ranging from computer
+                                </p>
+                                <p>
+                                    <b>Price: N30,000</b> <br>
+                                    <b>Duration: 8 weeks</b> <br>
+                                    <b>Schedule: 2 hrs, 3 days a week</b> <br>
+                                </p>
+                                <a href="{% url 'software' %}" class="btn btn-primary">Start Enrollment</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md col-lg-3">
+                    <div class="card bg-primary text-white">
+                        <div class="card-body text-center">
+                            <div class="h1 mb-3">
+                                <i class="bi bi-people"></i>
+                            </div>
+                            <h3 class="card-title mb-3">
+                                Mobile App Development
+                            </h3>
+                            <p class="card-text">
+                                Design and development of softwares ranging from
+                            </p>
+                            <p>
+                                <b>Price: N80,000</b> <br>
+                                <b>Duration: 8 weeks</b> <br>
+                                <b>Schedule: 2 hrs, 3 days a week</b> <br>
+                            </p>
+                            <a href="{% url 'mobile' %}" class="btn btn-light">Start Enrollment</a>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-md col-lg-3">
+                    <div class="card bg-dark text-light">
+                        <div class="card-body text-center">
+                            <div class="h1 mb-3">
+                                <i class="bi bi-laptop"></i>
+                            </div>
+                            <h3 class="card-title mb-3">
+                                Software Development
+                            </h3>
+                            <p class="card-text">
+                                We design and develop your websites for you just the way you like it and it's also incredibly affordable
+                            </p>
+                            <p>
+                                <b>Price: N60,000</b> <br>
+                                <b>Duration: 8 weeks</b> <br>
+                                <b>Schedule: 2 hrs, 3 days a week</b> <br>
+                            </p>
+                            <a href="{% url 'web' %}" class="btn btn-primary">Start Enrollment</a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+        </div> 
+    </div> 
+    <div class="text-center">
+        <a href="{% url 'index' %}">Home</a>
+    </div>
+
+</div>
+</section>
+
+
+{% endblock content %}
